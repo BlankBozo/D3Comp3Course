@@ -15,16 +15,17 @@
 }
 
 .content {
-  display: flex;
-  justify-content: center;
+  display: block;
+  width: 100%;
 }
 
 /* Grid layout for book cards and Add button */
 .book-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 220px);
   gap: 24px;
-  flex-wrap: nowrap;
   align-items: stretch;
+  justify-content: center;
 }
 
 /* Book card sizing and layout */
@@ -36,7 +37,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: transparent;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
 
@@ -50,37 +51,39 @@
 }
 
 .book-info {
-  padding: 10px 12px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
   height: 40%;
+  justify-content: space-between;
 }
 
 .book-title {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.3;
-  max-height: 2.6em;
+  height: 2.6em;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  margin-bottom: 8px;
 }
 
-.book-authors {
+.book-price {
   color: #666;
   font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-bottom: 8px;
 }
 
 .book-details-anchor {
-  margin-top: auto;
   font-size: 13px;
   color: #4f46e5;
+  margin-top: auto;
 }
 
 /* Add button styled as a card with same size */

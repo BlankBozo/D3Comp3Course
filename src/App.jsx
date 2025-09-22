@@ -1,23 +1,9 @@
 import './App.css'
 import BookCard from './components/BookCard'
-import frameworkImg from './assets/images/Framework.png'
-import pythonImg from './assets/images/Python.png'
+import booksData from '../data/books.json'
 
 function App() {
-  const books = [
-    {
-      imageSrc: frameworkImg,
-      title: 'Build Your Own Test Framework',
-      authors: 'Daniel Irvine',
-      detailsUrl: 'https://itbook.store/books/9781484292464',
-    },
-    {
-      imageSrc: pythonImg,
-      title: "Beginner's Guide to Streamlit with Python",
-      authors: 'Sujay Raghavendra',
-      detailsUrl: 'https://itbook.store/books/9781484289822',
-    },
-  ]
+  const books = booksData
 
   return (
     <div className="app-shell">
@@ -29,11 +15,11 @@ function App() {
         <div className="book-grid">
           {books.map((b) => (
             <BookCard
-              key={b.detailsUrl}
-              imageSrc={b.imageSrc}
+              key={b.isbn13}
+              imageSrc={b.image}
               title={b.title}
-              authors={b.authors}
-              detailsUrl={b.detailsUrl}
+              price={b.price}
+              detailsUrl={b.url}
             />
           ))}
           <button className="book-card add-card" aria-label="Add a new book">
